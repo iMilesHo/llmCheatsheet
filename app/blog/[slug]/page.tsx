@@ -47,6 +47,15 @@ export default async function PostPage({
       <PageHeader title={data.title} subtitle={data.excerpt} />
 
       <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="mt-8">
+          <Link
+            href={`/blog?page=${currentPage}`}
+            className="text-xl text-gray-500 underline px-2 sm:px-4 py-1 sm:py-2 flex items-center justify-between transition-transform duration-300 ease-in-out hover:scale-110"
+          >
+            ← Back to all posts
+          </Link>
+        </div>
+
         <article className="prose dark:prose-dark max-w-full overflow-x-auto break-words">
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
