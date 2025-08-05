@@ -64,7 +64,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         `}
       >
         {/* Updated flex container: adds mobile centering */}
-        <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-between h-48">
+        <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-between min-h-[12rem] py-8">
           {/* Text Section */}
           <div>
             <h1 className="text-4xl font-bold text-left mb-2">{title}</h1>
