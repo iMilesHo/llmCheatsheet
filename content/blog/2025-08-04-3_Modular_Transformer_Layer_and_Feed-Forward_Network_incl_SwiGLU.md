@@ -1,7 +1,7 @@
 ---
-title: "3 Modular Transformer Layer & Feed-Forward Network (with **SwiGLU**) "
+title: "3 Modular Transformer Layer & FFN"
 date: "2025-08-04 00:00:09"
-excerpt: "Here is a concise summary of the Modular Transformer Layer and Feed-Forward Network (with **SwiGLU**)."
+excerpt: "Here is a concise summary of the Modular Transformer Layer and FFN (with **SwiGLU**)."
 ---
 
 ## Modular Transformer Layer & Feed-Forward Network (with **SwiGLU**) — **Exam-Ready Cheat-Sheet**

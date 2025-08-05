@@ -1,7 +1,7 @@
 ---
-title: "4 Modular Transformer Layer & FFN"
+title: "4 Positional Encoding"
 date: "2025-08-04 00:00:08"
-excerpt: "Here is a concise summary of the Modular Transformer Layer and FFN"
+excerpt: "Here is a concise summary of Positional Encoding techniques."
 ---
 
 ## Positional Encoding (Additive Sinusoidal vs Rotary / RoPE) — **Exam Cheat-Sheet**
