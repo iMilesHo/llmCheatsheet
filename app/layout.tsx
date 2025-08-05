@@ -42,13 +42,11 @@ export default function RootLayout({
           {/* Container for entire page */}
           <div className="relative min-h-screen flex flex-col">
             {/* NavBar */}
-
+            <div className="h-16" />
             {/* Main content grows to fill space above footer */}
             <main className="flex-grow">{children}</main>
-
             {/* Footer at the bottom */}
             <Footer />
-
             {/* Bottom background & wave */}
             <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
               {/* Bottom Radial Gradient */}
