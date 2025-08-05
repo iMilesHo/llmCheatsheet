@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "katex/dist/katex.min.css";
+/* globals.css */
+@import "leaflet/dist/leaflet.css";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hide scrollbar in most browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar in Firefox */
+* {
+  scrollbar-width: none; /* Firefox only */
+}
