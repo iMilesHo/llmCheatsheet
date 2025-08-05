@@ -26,41 +26,9 @@ export default function Footer() {
             {/* Combined Columns */}
             <div className="flex space-x-12">
               {/* Links Column */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Links</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/blog" className="hover:underline">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="hover:underline">
-                      Work
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="hover:underline">
-                      Tech Stack
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="hover:underline">
-                      Bookshelf
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="hover:underline">
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
+              <div></div>
               {/* Elsewhere Column */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Elsewhere</h3>
-              </div>
+              <div></div>
             </div>
           </div>
         </div>
