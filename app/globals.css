@@ -1,10 +1,15 @@
+/* styles/globals.css */
+
+/* — Tailwind directives — */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* — 3rd-party CSS — */
 @import "katex/dist/katex.min.css";
-/* globals.css */
 @import "leaflet/dist/leaflet.css";
 
+/* — Your base resets & scrollbar hiding — */
 body,
 html {
   margin: 0;
@@ -13,7 +18,7 @@ html {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hide scrollbar in most browsers (Chrome, Safari, etc.) */
+/* Hide scrollbar in Chrome, Safari, etc. */
 ::-webkit-scrollbar {
   display: none;
 }
@@ -21,4 +26,22 @@ html {
 /* Hide scrollbar in Firefox */
 * {
   scrollbar-width: none; /* Firefox only */
+}
+
+/* — KaTeX overrides to allow wrapping & fallback scrolling — */
+@layer base {
+  /* block (display) math container */
+  .katex-display {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* inline math */
+  .katex {
+    white-space: normal !important; /* undo KaTeX’s nowrap */
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    max-width: 100%;
+  }
 }

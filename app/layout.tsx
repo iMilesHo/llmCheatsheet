@@ -1,5 +1,10 @@
 // app/layout.tsx
+
+// 1) Import KaTeX first, so our globals.css overrides it
+import "katex/dist/katex.min.css";
+// 2) Then your globals (which include the Tailwind directives + KaTeX overrides)
 import "./globals.css";
+
 import { Inter } from "next/font/google";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -24,15 +29,15 @@ export default function RootLayout({
           {/* Top Radial Gradient */}
           <div
             className="
-            absolute
-            top-0
-            left-0
-            w-full
-            h-screen
-            -z-10
-            bg-[radial-gradient(circle_at_50%_-55%,_rgba(58,169,221,1)_0%,_transparent_65%)]
-            dark:bg-[radial-gradient(circle_at_50%_-55%,_rgba(25,226,247,0.6)_10%,_transparent_65%)]
-          "
+              absolute
+              top-0
+              left-0
+              w-full
+              h-screen
+              -z-10
+              bg-[radial-gradient(circle_at_50%_-55%,_rgba(58,169,221,1)_0%,_transparent_65%)]
+              dark:bg-[radial-gradient(circle_at_50%_-55%,_rgba(25,226,247,0.6)_10%,_transparent_65%)]
+            "
           />
           {/* Container for entire page */}
           <div className="relative min-h-screen flex flex-col">
@@ -44,17 +49,9 @@ export default function RootLayout({
             {/* Footer at the bottom */}
             <Footer />
 
-            {/*
-              ---------------------------------------------------------
-              BOTTOM BACKGROUND & WAVE
-              ---------------------------------------------------------
-              1) Absolutely positioned behind everything (i.e., -z-10).
-              2) The 'inset-0' covers the entire page, but we'll rely on
-                 the radial gradient being anchored at the bottom.
-              3) The wave is anchored at the very bottom.
-            */}
+            {/* Bottom background & wave */}
             <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-              {/* Bottom Radial Gradient (fills entire page, but anchored visually at bottom) */}
+              {/* Bottom Radial Gradient */}
               <div
                 className="
                   w-full h-full
@@ -63,7 +60,7 @@ export default function RootLayout({
                 "
               />
 
-              {/* Wave Mask pinned at bottom (some fixed height for wave overlap) */}
+              {/* Wave Mask pinned at bottom */}
               <div
                 className="absolute bottom-0 left-0 w-full h-64"
                 style={{

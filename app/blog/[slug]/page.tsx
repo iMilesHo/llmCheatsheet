@@ -13,28 +13,22 @@ import rehypeStringify from "rehype-stringify";
 import Link from "next/link";
 
 import PageHeader from "../../components/PageHeader";
-import GiscusComments from "../../components/GiscusComments"; // <-- Import here!
-
-// Import CSS for math and PrismJS syntax highlighting
-import "katex/dist/katex.min.css";
-import "../../prism-code-theme.css";
-
-interface PostPageProps {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ page?: string }>;
-}
+import GiscusComments from "../../components/GiscusComments";
 
 export default async function PostPage({
   params,
   searchParams,
-}: PostPageProps) {
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ page?: string }>;
+}) {
+  // await the incoming promises before using them
   const { slug } = await params;
   const { page: pageParam } = await searchParams;
   const currentPage = pageParam || "1";
 
   const fullPath = path.join(process.cwd(), "content/blog", `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-
   const { data, content } = matter(fileContents);
 
   const processedContent = await remark()
@@ -46,19 +40,17 @@ export default async function PostPage({
     .use(rehypePrism)
     .use(rehypeStringify)
     .process(content);
-
   const contentHtml = processedContent.toString();
 
   return (
     <div className="min-h-screen">
       <PageHeader title={data.title} subtitle={data.excerpt} />
-      <div
-        className="max-w-4xl mx-auto px-6 py-8"
-        style={{ maxWidth: "4xl", paddingLeft: "24px", paddingRight: "24px" }}
-      >
-        <article className="prose dark:prose-dark" style={{ maxWidth: "100%" }}>
+
+      <div className="max-w-4xl mx-auto px-6 py-8">
+        <article className="prose dark:prose-dark max-w-full overflow-x-auto break-words">
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </article>
+
         <div className="mt-8">
           <Link
             href={`/blog?page=${currentPage}`}
@@ -68,7 +60,6 @@ export default async function PostPage({
           </Link>
         </div>
 
-        {/* Add Giscus comments below the post content */}
         <GiscusComments />
       </div>
     </div>
